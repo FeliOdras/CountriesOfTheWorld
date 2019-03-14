@@ -47,7 +47,6 @@ class ShowCountryInfo {
 
     showResults() {
         let resultList = this.searchByCountryName();
-        console.log(resultList)
         return (resultList.length < 1 ?
             `There is no country name matching your search` :
             resultList
