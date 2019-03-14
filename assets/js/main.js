@@ -67,7 +67,6 @@ class ShowCountryInfo {
                         <li>${this.countCurrencies(country.currencies)}: ${this.showlistOf(country.currencies, 'name')} (${this.showlistOf(country.currencies, 'symbol')})</li>
                     </ul>
                     <ul>
-                       
                         <li>Calling Code: +${country.callingCodes}</li>
                         <li>Region: ${country.region}</li>
                         <li>Subrgion: ${country.subregion}</li>
