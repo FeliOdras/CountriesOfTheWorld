@@ -8,7 +8,7 @@ class ShowCountryInfo {
             .then(response => response.json())
             .then(countries => {
                 this.countries = countries
-                this.searchByCountryName()
+                this.render()
             })
     }
 
@@ -25,6 +25,28 @@ class ShowCountryInfo {
             }
         )
         return countryList.filter(country => country.isSearchMatch == true);
+    }
+
+    showResults() {
+        let resultList = this.searchByCountryName();
+        console.log(resultList)
+        if (resultList.length < 1) {
+            return `There is no country name matching your search`
+        } else {
+            return resultList
+                .map(country => {
+                    return `
+                   <p> Name: ${country.name}</p>
+                `
+                }).join('');
+        }
+    }
+
+    render() {
+        let results = this.showResults();
+        let output = ``;
+        output += results;
+        document.querySelector('.countryInfo').innerHTML = output;
     }
 }
 
