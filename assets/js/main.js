@@ -6,11 +6,10 @@ class ShowCountryInfo {
     init() {
         fetch('https://restcountries.eu/rest/v2/all')
             .then(response => response.json())
-            .then(countries => this.doLoop(countries))
-    }
-
-    doLoop(countries) {
-        countries.forEach(country => console.log(country))
+            .then(countries => {
+                this.countries = countries
+            })
     }
 }
+
 const newCountryInfo = new ShowCountryInfo();
