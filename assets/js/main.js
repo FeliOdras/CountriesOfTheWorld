@@ -42,11 +42,18 @@ class ShowCountryInfo {
         }
     }
 
+    addEventListeners() {
+        document
+            .querySelector('.countrySearch')
+            .addEventListener('keyup', () => this.init());
+    }
+
     render() {
         let results = this.showResults();
         let output = ``;
         output += results;
         document.querySelector('.countryInfo').innerHTML = output;
+        this.addEventListeners()
     }
 }
 
